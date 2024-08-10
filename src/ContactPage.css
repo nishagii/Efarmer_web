@@ -1,0 +1,127 @@
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  .h-text{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+  }
+  .contact-info {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .contact-header img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .about {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    background: #0eed67;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 369.98px;
+    height: 220px;
+  }
+  .address{
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    background: #f1d848;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 369.98px;
+    height: 220px;
+  }
+  .contact{
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    background: #c5f057;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 369.98px;
+    height: 220px;
+  }
+  .info{
+    font-family: "Covered By Your Grace";
+  }
+  
+  .image-form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .image, .contact-form {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background: #f0f0f0;
+    border-radius: 10px;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  .cform{
+    color: #f1d848;
+  }
+  
+  .contact-form input{
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  } 
+
+  .contact-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact-form button {
+    padding: 10px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+  }
+  
+  .contact-form button:hover {
+    background: #45a049;
+  }
+ 
