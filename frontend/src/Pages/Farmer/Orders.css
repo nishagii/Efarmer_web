@@ -1,0 +1,64 @@
+.orders-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.orders-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.order-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #4BAF47;
+}
+
+.order-card p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Assuming this CSS is in a file like `styles.css` or a CSS module */
+
+.delete-button {
+  background-color: #f44336; /* Red background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 5px 20px; /* Padding */
+  font-size: 15px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.delete-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.delete-button:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+.delete-button:disabled {
+  background-color: #e0e0e0; /* Light grey background for disabled state */
+  cursor: not-allowed; /* Not allowed cursor for disabled state */
+}

@@ -1,12 +1,11 @@
-.nav-logo{
+.nav-logo {
     margin: 30px;
     margin-bottom: 0px;
     display: flex;
     align-items: center;
-
 }
 
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-around;
     box-shadow: 0 1px 3px -2px black;
@@ -14,7 +13,7 @@
     padding: 8px;
 }
 
-.nav-menu{
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
@@ -22,17 +21,17 @@
     gap: 70px;
     font-size: 1rem;
 }
-.nav-menu li{
+
+.nav-menu li {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     gap: 3px;
-
 }
 
-.nav-menu hr{
+.nav-menu hr {
     border: none;
     width: 60px;
     height: 3px;
@@ -40,13 +39,29 @@
     background-color: #4BAF47;
 }
 
-.nav-login-cart{
+/* Link styling */
+.nav-link {
+    text-decoration: none;
+    color: inherit;  /* Inherit the color from parent */
+    transition: color 0.3s ease;
+}
+
+.nav-link.active {
+    font-weight: bold; /* Optional: make the active link bold */
+}
+
+/* Hover effect */
+.nav-link:hover {
+    color: #4BAF47;
+}
+
+.nav-login-cart {
     display: flex;
     align-items: center;
     gap: 45px;
 }
 
-.nav-login-cart button{
+.nav-login-cart button {
     width: 90px;
     height: 35px;
     margin-top: 5px;
@@ -61,13 +76,13 @@
     transition: 0.5s;
 }
 
-.nav-login-cart button:hover{
+.nav-login-cart button:hover {
     background-color: #ffffff;
     color: #4BAF47;
     border: 2px solid #4BAF47;
 }
 
-.nav-cart-count{
+.nav-cart-count {
     width: 12.5px;
     height: 14px;
     display: flex;
@@ -81,3 +96,5 @@
     color: white;
     padding: 1.3px;
 }
+
+ 

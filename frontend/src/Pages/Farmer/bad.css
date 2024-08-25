@@ -1,0 +1,77 @@
+Styles for the entire page
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container for the bad vegetables and fruits sections */
+.bad-vegetables, .bad-fruits {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading for the section */
+h2 {
+  color: #4caf50;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Container for the individual vegetable and fruit items */
+.vegetable-list, .fruit-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Individual vegetable and fruit item card */
+.vegetable-item, .fruit-item {
+  background-color: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* Name of the item */
+.vegetable-item h3, .fruit-item h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Price and quantity text */
+.vegetable-item p, .fruit-item p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* Buttons for edit and delete */
+.bad-vegetables button,
+.bad-fruits button {
+  padding: 10px 15px;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bad-vegetables button:first-of-type,
+.bad-fruits button:first-of-type {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.bad-vegetables button:last-of-type,
+.bad-fruits button:last-of-type {
+  background-color: #f44336;
+  color: #fff;
+}
