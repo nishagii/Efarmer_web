@@ -1,0 +1,116 @@
+/* Container for the header */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-left h1 {
+  margin: 0;
+}
+
+.header-right p {
+  margin: 5px 0;
+  text-align: right;
+}
+
+/* Hero Section Styling */
+.hero {
+  background-color: #f0ff651a; /* You can replace this with an image by using background-image */
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  margin-bottom: 40px;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 48px;
+}
+
+/* Content Section Styling */
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+.text-content {
+  flex: 2;
+}
+
+.details {
+  flex: 1;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+
+/* Products Section Styling */
+.products {
+  padding: 40px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.product-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 240px; /* Ensures that cards have a minimum width */
+  max-width: 300px; /* Ensures that cards have a maximum width */
+  margin: 10px;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card h4 {
+  margin-top: 10px;
+}
+
+/* Footer Section Styling */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #4CAF50;
+  color: white;
+  margin-top: 20px;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card h4 {
+    margin-top: 10px;
+}

@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.hero {
+    background-image: url('#'); /* Replace with your actual image path */
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 48px;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+.card {
+    width: 300px;
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.quantity-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.quantity-controls button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.quantity-controls button:hover {
+    background-color: #45a049;
+}
+
+.total-amount {
+    text-align: center;
+    margin: 40px;
+}
+
+.total-amount h3 {
+    font-size: 24px;
+}
+
+.total-amount button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.total-amount button:hover {
+    background-color: #45a049;
+}
+
+.conditions {
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+.conditions h3 {
+    margin-bottom: 10px;
+}
+
+.conditions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.conditions ul li {
+    margin-bottom: 10px;
+}
