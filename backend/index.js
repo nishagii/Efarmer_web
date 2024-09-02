@@ -1,43 +1,26 @@
-const port = 4000;
-const express = require('express');
-const app = express();
-const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
-const multer = require('multer');
-const path = require('path');
-const cors = require('cors');
+import express from "express";
+import cors from "cors";
+import { connectDB } from "./config/db.js";
+import fvegeRouter from "./Routes/fvegeRoute.js";
+import userRouter from "./Routes/userRoute.js";
+import 'dotenv/config';
 
-app.use(express.json());//every request that get from responce will be in json format
-app.use(cors());//to allow cross origin request
+//app configuration
+const app = express();
+const port = 4000;
+
+//middleware
+app.use(express.json()); // Every request that comes in will be in JSON format
+app.use(cors()); // To allow cross-origin requests
 
 //database connection
-const mongoURI = "mongodb://127.0.0.1:27017/efarmer";
+connectDB();
 
-mongoose.connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(() => {console.log("MongoDB Connected uttooo");
-    })
-.catch((err) => {console.log(err);});
+//api endpoints
 
-//API creation
-app.get('/', (req, res) => {
-    res.send("Express App is Running uttooo")
-})
-
-//image storage engine
-
-const storage = multer.diskStorage({
-    destination: './upload/images',
-    filename: (req, file, cb) => {
-        return cb(null,'${file.fieldname}_${Date.now()}${$path.extname(file.originalname)')
-    }
-})
-
-const upload=multer({storage:storage})
-
-//create upload endpoint
+app.use("/api/fvege", fvegeRouter)
+app.use("/images", express.static("upload/images"));
+app.use("api/user", userRouter);
 
 
 
@@ -52,10 +35,21 @@ const upload=multer({storage:storage})
 
 
 
-app.listen(port, (error) => {
-    if (!error) {
-        console.log(`Server is running on port: ${port}`);
-    } else {
-        console.log("Error found" + error);
-    }
-})
+
+
+
+
+
+
+
+
+
+
+app.get("/", (req, res) => {
+  res.send("Express App is Running uttooo");
+});
+
+//running the server
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});

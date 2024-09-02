@@ -28,7 +28,58 @@ import vegetable_image from "./Components/Assets/fvegetables.jpeg";
 import AppDownload from "./Components/AppDownload/AppDownload";
 
 function App() {
-  
+  // Define the initial list of fruits
+  const initialFruits = [
+    {
+      id: 1,
+      name: "Apple",
+      price: 2.5,
+      quantity: 100,
+      image: "/path/to/apple-image.jpg",
+    },
+    {
+      id: 2,
+      name: "Banana",
+      price: 1.0,
+      quantity: 200,
+      image: "/path/to/banana-image.jpg",
+    },
+    {
+      id: 3,
+      name: "Orange",
+      price: 3.0,
+      quantity: 150,
+      image: "/path/to/orange-image.jpg",
+    },
+    // Add more fruits as needed
+  ];
+
+  // Define the initial list of products (vegetables)
+  const initialProducts = [
+    {
+      id: 1,
+      name: "Tomato",
+      price: 1.5,
+      quantity: 120,
+      image: "/path/to/tomato-image.jpg",
+    },
+    {
+      id: 2,
+      name: "Carrot",
+      price: 2.0,
+      quantity: 180,
+      image: "/path/to/carrot-image.jpg",
+    },
+    {
+      id: 3,
+      name: "Spinach",
+      price: 2.5,
+      quantity: 80,
+      image: "/path/to/spinach-image.jpg",
+    },
+    // Add more vegetables as needed
+  ];
+
   const [fruits, setFruits] = useState(initialFruits);
   const [products, setProducts] = useState(initialProducts);
 
@@ -40,7 +91,6 @@ function App() {
         <Navbar />
 
         <Routes>
-
           {/* <Route path="/" element={<Home />} /> */}
           <Route path="/contact" element={<Contact />} />
 
@@ -57,7 +107,7 @@ function App() {
           />
           <Route path="/old-vegetables" element={<BadVegetables />} />
           <Route path="/old-fruits" element={<BadFruits />} />
-          
+
           <Route path="/orders" element={<Orders />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
@@ -73,8 +123,8 @@ function App() {
               />
             }
           />
-  
-            {/* these are for the users */}
+
+          {/* these are for the users */}
           {/* <Route path="/fvegetables" element={<Fveg />} />
           <Route path="/ffruits" element={<Ffruits />} />
           <Route path="/oldvegetables" element={<Oldveg />} />
@@ -84,13 +134,24 @@ function App() {
           <Route path=":productId" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignup />} />
+          
 
-          <Route path="/ffruits" element={<ShopCategory banner={fruit_image} category="ffruits" />} />
-          <Route path="/fvegetables" element={<ShopCategory banner={vegetable_image} category="fveg" />} />
-          <Route path="/oldfruits" element={<ShopCategory category="ofruits" />} />
-          <Route path="/oldvegetables" element={<ShopCategory category="oveg" />} />
-          
-          
+          <Route
+            path="/ffruits"
+            element={<ShopCategory banner={fruit_image} category="ffruits" />}
+          />
+          <Route
+            path="/fvegetables"
+            element={<ShopCategory banner={vegetable_image} category="fveg" />}
+          />
+          <Route
+            path="/oldfruits"
+            element={<ShopCategory category="ofruits" />}
+          />
+          <Route
+            path="/oldvegetables"
+            element={<ShopCategory category="oveg" />}
+          />
         </Routes>
         <AppDownload />
         <Footer />
