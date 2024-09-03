@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../Assets/logo.png';
 import carticon from '../Assets/cart_icon.png';
@@ -8,7 +8,17 @@ import { ShopContext } from '../../Context/ShopContext';
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
 
-  const { getTotalCartItems } = useContext(ShopContext);
+  const { getTotalCartItems, token, setToken } = useContext(ShopContext);
+
+  const navigate = useNavigate();
+  
+  const logout = () => { 
+    localStorage.removeItem('token');
+    setToken('');
+    navigate('/');
+  }
+
+
 
   return (
     <div>
@@ -64,8 +74,11 @@ const Navbar = () => {
           </li>
         </ul>
 
+        
         <div className="nav-login-cart">
-          <Link to="/login" ><button>Login</button></Link> 
+          {!token ? <Link to="/login" ><button>Login</button></Link>
+          : <button onClick={logout}>Logout</button>}
+         
           <Link to="/cart">
             <img src={carticon} alt="Cart" />
           </Link>

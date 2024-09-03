@@ -5,13 +5,13 @@ import {ShopContext} from '../../Context/ShopContext'
 const Item = (props) => {
   const { id, name, price, image } = props;
 
-  const { cartItems, addToCart, removeFromCart } = useContext(ShopContext);
+  const { cartItems, addToCart, removeFromCart,url } = useContext(ShopContext);
   
   const itemQuantity = cartItems[id] || 0;
 
   return (
     <div className='item'>
-      <img src={props.image} alt="props.name" />
+      <img src={url+"/images/"+props.image} alt="props.name" />
       <h4>{props.name}</h4>
       <p className='price'>{`1Kg : Rs ${props.price}`}</p>
 

@@ -1,0 +1,73 @@
+import React, { useContext, useState } from 'react';
+import './Login.css';
+import { Link, useNavigate } from 'react-router-dom';
+import { ShopContext } from '../../Context/ShopContext';
+import axios from 'axios';
+
+const Login = () => {
+    const [data, setData] = useState({
+        email: '',
+        password: ''
+    });
+
+    const { url, setToken } = useContext(ShopContext);
+    const navigate = useNavigate();
+
+    const onChangeHandler = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setData((data) => ({ ...data, [name]: value }));
+    };
+
+    const onLogin = async (event) => {
+        event.preventDefault();
+        const loginUrl = url + '/api/user/login';
+
+        try {
+            const response = await axios.post(loginUrl, data);
+
+            if (response.data.success) {
+                setToken(response.data.token);
+                localStorage.setItem('token', response.data.token);
+
+                // Redirect to the home page after successful login
+                navigate('/');
+            } else {
+                alert(response.data.message);
+            }
+        } catch (error) {
+            console.error('Login error:', error);
+            alert('Login failed. Please check your credentials and try again.');
+        }
+    };
+
+    return (
+        <div className="loginsignup">
+            <form onSubmit={onLogin} className="loginsignup-container">
+                <h1>Login</h1>
+                <div className="loginsignup-fields">
+                    <input
+                        name="email"
+                        onChange={onChangeHandler}
+                        value={data.email}
+                        type="email"
+                        placeholder="Email"
+                    />
+                    <input
+                        name="password"
+                        onChange={onChangeHandler}
+                        value={data.password}
+                        type="password"
+                        placeholder="Password"
+                    />
+                </div>
+                <button type="submit">Login</button>
+                <p className="loginsignup-login">
+                    Do not have an account? <Link to="/register"><span>Register here</span></Link>
+                </p>
+            </form>
+        </div>
+    );
+};
+
+export default Login;

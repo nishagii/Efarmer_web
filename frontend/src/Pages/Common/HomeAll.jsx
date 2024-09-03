@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './HomeAll.css';
+import { ShopContext } from '../../Context/ShopContext';
 
 function HomeAll() {
+
+    const { token, setToken } = useContext(ShopContext);
     return (
         <div>
             <main>
@@ -31,36 +34,37 @@ function HomeAll() {
                         <p>Location: Brooklyn, New York</p>
                     </div>
                 </section>
-
-                <section className="products">
-                    <h3>Explore Our Products</h3>
-                    <div className="product-cards">
-                        <div className="card">
-                            <Link to="/fvegetables">
-                                <img src="#" alt="veg" />
-                                <h4>Fresh vegetables</h4>
-                            </Link>
+                {!token ? <p> <Link to="/login">Login</Link> to view and order our products</p>
+                    : <section className="products">
+                        <h3>Explore Our Products</h3>
+                        <div className="product-cards">
+                            <div className="card">
+                                <Link to="/fvegetables">
+                                    <img src="#" alt="veg" />
+                                    <h4>Fresh vegetables</h4>
+                                </Link>
+                            </div>
+                            <div className="card">
+                                <Link to="/ffruits">
+                                    <img src="ffruits.jpg" alt="Fresh Fruits" />
+                                    <h4>Fresh Fruits</h4>
+                                </Link>
+                            </div>
+                            <div className="card">
+                                <Link to="/oldvegetables">
+                                    <img src="organic-vegetables.jpg" alt="Organic Vegetables" />
+                                    <h4>Old Vegetables</h4>
+                                </Link>
+                            </div>
+                            <div className="card">
+                                <Link to="/oldfruits">
+                                    <img src="dairy-products.jpg" alt="Dairy Products" />
+                                    <h4>Old Fruits</h4>
+                                </Link>
+                            </div>
                         </div>
-                        <div className="card">
-                            <Link to="/ffruits">
-                                <img src="ffruits.jpg" alt="Fresh Fruits" />
-                                <h4>Fresh Fruits</h4>
-                            </Link>
-                        </div>
-                        <div className="card">
-                            <Link to="/oldvegetables">
-                                <img src="organic-vegetables.jpg" alt="Organic Vegetables" />
-                                <h4>Old Vegetables</h4>
-                            </Link>
-                        </div>
-                        <div className="card">
-                            <Link to="/oldfruits">
-                                <img src="dairy-products.jpg" alt="Dairy Products" />
-                                <h4>Old Fruits</h4>
-                            </Link>
-                        </div>
-                    </div>
-                </section>
+                    </section>}
+                
             </main>
         </div>
     );

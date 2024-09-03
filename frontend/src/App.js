@@ -21,11 +21,12 @@ import HomeAll from "./Pages/Common/HomeAll";
 import Cart from "./Pages/Users/Cart";
 import ScrollToTop from "./Components/Layout/Layout";
 import Product from "./Pages/Users/Product";
-import LoginSignup from "./Pages/Common/LoginSignup";
+import LoginSignup from "./Pages/Common/Register";
 import ShopCategory from "./Pages/Users/ShopCategory";
 import fruit_image from "./Components/Assets/freshfut.jpeg";
 import vegetable_image from "./Components/Assets/fvegetables.jpeg";
 import AppDownload from "./Components/AppDownload/AppDownload";
+import Login from "./Pages/Common/Login";
 
 function App() {
   // Define the initial list of fruits
@@ -82,13 +83,14 @@ function App() {
 
   const [fruits, setFruits] = useState(initialFruits);
   const [products, setProducts] = useState(initialProducts);
+  const [showLogin, setShowLogin] = useState(false);
 
   return (
     <div>
       <BrowserRouter>
         <ScrollToTop />
 
-        <Navbar />
+        <Navbar setShowLogin={setShowLogin} />
 
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
@@ -112,6 +114,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/" element={<HomeAll />} />
+
           <Route
             path="/update/:id"
             element={
@@ -133,7 +136,8 @@ function App() {
           <Route path="/product" element={<Product />} />
           <Route path=":productId" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<LoginSignup />} />
+          <Route path="/register" element={<LoginSignup />} />
+          <Route path="/login" element={<Login />} />
           
 
           <Route
@@ -146,7 +150,7 @@ function App() {
           />
           <Route
             path="/oldfruits"
-            element={<ShopCategory category="ofruits" />}
+            element={<ShopCategory  category="ofruits" />}
           />
           <Route
             path="/oldvegetables"
