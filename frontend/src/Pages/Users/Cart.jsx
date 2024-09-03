@@ -6,7 +6,7 @@ import all_product from "../../Components/Assets/all_product";
 
 const Cart = () => {
 
-    const { cartItems,all_product, addToCart, removeFromCart,getTotalCartAmount } = useContext(ShopContext);
+    const { cartItems,all_product, addToCart, removeFromCart,getTotalCartAmount ,url} = useContext(ShopContext);
 
   return (
     <div className="cart">
@@ -28,7 +28,7 @@ const Cart = () => {
             return (
               <div>
                 <div className="cart-items-title cart-items-item">
-                  <img src={item.image} alt="no image" />
+                  <img src={url+"/images/"+item.image} alt="no image" />
                   <p>{item.name}</p>
                   <p>Rs. {item.price}</p>
                   <p>{cartItems[item.id]}</p>

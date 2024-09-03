@@ -4,6 +4,7 @@ import { connectDB } from "./config/db.js";
 import fvegeRouter from "./Routes/fvegeRoute.js";
 import userRouter from "./Routes/userRoute.js";
 import 'dotenv/config';
+import cartRouter from "./Routes/cartRoute.js";
 
 //app configuration
 const app = express();
@@ -20,7 +21,8 @@ connectDB();
 
 app.use("/api/fvege", fvegeRouter)
 app.use("/images", express.static("upload/images"));
-app.use("api/user", userRouter);
+app.use("/api/user", userRouter);
+app.use("/api/cart", cartRouter);
 
 
 
