@@ -1,73 +1,127 @@
 import axios from "axios";
-import React, { useEffect } from "react";
-import { createContext } from "react";
-import { useState } from "react";
-// import all_product from "../Components/Assets/all_product";
+import React, { useEffect, createContext, useState } from "react";
 
 export const ShopContext = createContext(null);
 
-
-const ShopContextProvider = (props) => { 
-
+const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
+    const [token, setToken] = useState("");
+    const [all_product, setAllProduct] = useState([]);
+    const [userType, setUserType] = useState("");
+    const [userName, setUserName] = useState('');
+    const [error, setError] = useState(null);
 
     const url = "http://localhost:4000";
-    const [token, setToken] = useState("");
-    const[all_product,setAllProduct] = useState([]);
 
+    // Function to handle errors
+    const handleError = (error) => {
+        console.error("An error occurred:", error);
+        setError(error.message);
+    };
 
-    const addToCart = (itemId) => {
-        if (!cartItems[itemId]) {
-            setCartItems((prev) => ({ ...prev, [itemId]: 5 }));
+    const updateCart = (newCartItems) => {
+        setCartItems(newCartItems);
+        localStorage.setItem('cartItems', JSON.stringify(newCartItems));
+    };
+
+    const addToCart = async (itemId) => {
+        const newCartItems = { ...cartItems };
+        if (!newCartItems[itemId]) {
+            newCartItems[itemId] = 5;
         } else {
-            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 5}))
-            console.log(cartItems);
+            newCartItems[itemId] += 5;
         }
-       
-    }
+        updateCart(newCartItems);
+        if (token) {
+            await axios.post(url + '/api/cart/add', { itemId }, { headers: { Authorization: `Bearer ${token}` } });
+        }
+    };
 
-    const removeFromCart = (itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 5}))
-    }
+    const removeFromCart = async (itemId) => {
+        const newCartItems = { ...cartItems };
+        if (newCartItems[itemId] && newCartItems[itemId] > 0) {
+            newCartItems[itemId] -= 5;
+            updateCart(newCartItems);
+            if (token) {
+                await axios.post(url + '/api/cart/remove', { itemId }, { headers: { Authorization: `Bearer ${token}` } });
+            }
+        }
+    };
 
     const getTotalCartAmount = () => {
         let totalAmount = 0;
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
-                let itemInfo = all_product.find((product) => product.id == item);
-                totalAmount += itemInfo.price * cartItems[item];
+                let itemInfo = all_product.find((product) => product.id === item);
+                if (itemInfo) {  // Check if itemInfo is defined
+                    totalAmount += itemInfo.price * cartItems[item];
+                }
             }
         }
         return totalAmount;
-    }
+    };
 
-    const fetchAllProduct = async () => { 
-        const response = await axios.get(url + '/api/fvege/list');
-        setAllProduct(response.data.data);
-    }
-
-    const getTotalCartItems = () => {
-        let totalItem = 0;
-        for (const item in cartItems) {
-           if(cartItems[item] > 0) {
-               totalItem += cartItems[item];
-           }
+    const fetchAllProduct = async () => {
+        try {
+            const response = await axios.get(url + '/api/fvege/list');
+            setAllProduct(response.data.data);
+        } catch (error) {
+            handleError(error);
         }
-        return (totalItem/5);
-    }
+    };
+
+    const fetchUserData = async () => {
+        try {
+            if (token) {
+                const response = await axios.get(url + '/api/user/list', { headers: { Authorization: `Bearer ${token}` } });
+                setUserType(response.data.type); // Ensure response.data.type is the correct field
+                setUserName(response.data.name);
+            }
+        } catch (error) {
+            handleError(error);
+        }
+    };
 
     useEffect(() => {
-        
-        async function loadData() { 
+        async function loadData() {
             await fetchAllProduct();
-            if (localStorage.getItem('token')) {
-                setToken(localStorage.getItem('token'));
+            const savedToken = localStorage.getItem('token');
+            if (savedToken) {
+                setToken(savedToken);
+                await fetchUserData(); // Fetch user data after setting the token
+            }
+            const savedUserType = localStorage.getItem('userType');
+            const savedUserName = localStorage.getItem('userName');
+            if (savedUserType) {
+                setUserType(savedUserType);
+            }
+            if (savedUserName) {
+                setUserName(savedUserName);
+            }
+            const savedCartItems = JSON.parse(localStorage.getItem('cartItems'));
+            if (savedCartItems) {
+                setCartItems(savedCartItems);
             }
         }
         loadData();
-    }, [])
+    }, []); // Empty dependency array to run only on mount
 
-    const contextValue = { all_product, setCartItems, cartItems, addToCart, removeFromCart, getTotalCartItems, getTotalCartAmount,url,token,setToken };
+    const contextValue = {
+        all_product,
+        setCartItems,
+        cartItems,
+        addToCart,
+        removeFromCart,
+        getTotalCartAmount,
+        url,
+        token,
+        setToken,
+        setUserType,
+        setUserName,
+        userName,
+        userType,
+        error
+    };
 
     return (
         <ShopContext.Provider value={contextValue}>

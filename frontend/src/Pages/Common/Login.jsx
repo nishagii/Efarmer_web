@@ -3,6 +3,7 @@ import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [data, setData] = useState({
@@ -10,7 +11,7 @@ const Login = () => {
         password: ''
     });
 
-    const { url, setToken } = useContext(ShopContext);
+    const { url, setToken, setUserType, setUserName } = useContext(ShopContext);
     const navigate = useNavigate();
 
     const onChangeHandler = (event) => {
@@ -25,15 +26,25 @@ const Login = () => {
 
         try {
             const response = await axios.post(loginUrl, data);
+            console.log(response.data);
 
             if (response.data.success) {
+                const {type} = response.data;
                 setToken(response.data.token);
-                localStorage.setItem('token', response.data.token);
 
-                // Redirect to the home page after successful login
+                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('userType', response.data.type); // Store userType in local storage
+                localStorage.setItem('userName', response.data.name);//store username in local storage
+
+                setUserType(response.data.type); // Update context with userType
+                setUserName(response.data.name); // Update context with username
+
+                toast.success(response.data.message);
+
+                // Redirect to the home page after successful login and refresh the page
                 navigate('/');
             } else {
-                alert(response.data.message);
+                toast.error(response.data.message);
             }
         } catch (error) {
             console.error('Login error:', error);

@@ -18,14 +18,14 @@ const addFreshVeges = async (req, res) => {
         await fvege.save();
         res.json({
             success: true,
-            message: "Fresh Veges added successfully",
+            message: "Product added successfully",
             name: req.body.name,
         });
     } catch(error) {
         console.log(error);
         res.json({
             success: false,
-            message: "Error.Fresh Veges not added",
+            message: "Error.Product not added",
         });
     }
 }
@@ -37,14 +37,14 @@ const listFreshVeges = async (req, res) => {
         const fveges = await freshVeges.find({});
         res.json({
             success: true,
-            message: "All Fresh Veges",
+            message: "All Products List",
             data: fveges,
         });
     } catch (error) {
         console.log(error);
         res.json({
             success: false,
-            message: "Error. No Fresh Veges found",
+            message: "Error. Products found",
         });
     }
 }
@@ -55,19 +55,19 @@ const removeFreshVeges = async (req, res) => {
     try {
         const fvege = await freshVeges.findById(req.body.id);
         const image = fvege.image;
-        fs.unlink(`./upload/images/${image}`,() => {});
+        fs.unlink(`./upload/images/${image}`, () => { });
         
         await freshVeges.findByIdAndDelete(req.body.id);
         res.json({
             success: true,
-            message: "Fresh Veges removed successfully",
+            message: "Product removed successfully",
         });
 
     } catch (error) {
         console.log(error);
         res.json({
             success: false,
-            message: "Error. Fresh Veges not removed",
+            message: "Error. Product not removed",
         });
     }
 }
@@ -85,7 +85,7 @@ const updateFreshVeges = async (req, res) => {
     if (!fvege) {
       return res.json({
         success: false,
-        message: "Fresh Veges item not found",
+        message: "Product item not found",
       });
     }
 
@@ -112,14 +112,14 @@ const updateFreshVeges = async (req, res) => {
 
     res.json({
       success: true,
-      message: "Fresh Veges item updated successfully",
+      message: "Item updated successfully",
       data: fvege,
     });
   } catch (error) {
     console.log(error);
     res.json({
       success: false,
-      message: "Error. Fresh Veges item not updated",
+      message: "Error. Item not updated",
     });
   }
 };

@@ -3,6 +3,7 @@ import "./CSS/Cart.css";
 import { ShopContext } from "../../Context/ShopContext";
 import { useContext } from "react";
 import all_product from "../../Components/Assets/all_product";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
@@ -67,7 +68,8 @@ const Cart = () => {
               <p>LKR {getTotalCartAmount()*0.9}</p>
             </div>
           </div>
-          <button>Save the order</button>
+          <Link to="/placeorder">  <button >Save the order</button></Link>
+         
         </div>
         <div>
           <p>mokak hari magulak danna methnt</p>

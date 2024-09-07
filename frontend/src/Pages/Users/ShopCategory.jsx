@@ -30,7 +30,7 @@ const ShopCategory = (props) => {
       <div className="item-container">
         {all_product.map((item, index) => {
           if (props.category === item.category) {
-            return <Item key={index} id={item.id} name={item.name} image={item.image} price={item.price} quantity={item.quantity} />;
+            return <Item key={index} id={item.id} name={item.name} image={item.image} price={item.price}  />;
           } else {
             return null;
           }

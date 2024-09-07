@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react'
 import './List.css'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
-const List = ({url}) => {
+const List = ({ url }) => {
 
+  const MySwal = withReactContent(Swal);
   const [list, setList] = useState([]);
 
   const fetchList = async () => {
@@ -12,18 +15,35 @@ const List = ({url}) => {
     if (response.data.success) {
       setList(response.data.data)
     } else {
-      toast.error("Error")
+      toast.error("Error fetching products");
     }
   }
 
   const removeFood = async (foodId) => {
-    const response = await axios.post(`${url}/api/fvege/delete`, { id: foodId });
-    await fetchList();
-    if (response.data.success) {
-      toast.success(response.data.message);
-    } else {
-      toast.error("Error")
-    }
+    MySwal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: 'green',
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const response = await axios.post(`${url}/api/fvege/delete`, { id: foodId });
+        await fetchList();
+        if (response.data.success) {
+          MySwal.fire(
+            'Deleted!',
+            'The product has been deleted.',
+            'success'
+          );
+        } else {
+          toast.error("Error removing product");
+        }
+      }
+    })
   }
 
   useEffect(() => {
@@ -45,12 +65,12 @@ const List = ({url}) => {
         {list.map((item, index) => {
           return (
             <div key={index} className='list-table-format'>
-              <img src={`${url}/images/`+item.image} alt="" />
+              <img src={`${url}/images/` + item.image} alt="" />
               <p>{item.name}</p>
               <p>{item.id}</p>
               <p>{item.category}</p>
               <p>${item.price}</p>
-              <p className='cursor' onClick={()=>removeFood(item._id)}>X</p>
+              <p className='cursor' onClick={() => removeFood(item._id)}>X</p>
             </div>
           )
         })}
@@ -59,4 +79,4 @@ const List = ({url}) => {
   )
 }
 
-export default List
+export default List;

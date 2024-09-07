@@ -1,0 +1,94 @@
+.update-user {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.update-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #4CAF50;
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
+.update-btn {
+    width:100px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 50px;
+}
+
+.update-btn:hover {
+    background-color: #45a049;
+}
+
+select {
+    background-color: white;
+}
+
+.image-preview {
+    margin-top: 10px;
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add responsive design for mobile devices */
+@media (max-width: 768px) {
+    .update-user {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .update-btn {
+        font-size: 14px;
+    }
+}
+.button-wrapper {
+    text-align: center;
+    margin-top: 50px;
+}
