@@ -79,11 +79,16 @@ const Navbar = () => {
           {!token ? <Link to="/login" ><button>Login</button></Link>
           : <button onClick={logout}>Logout</button>}
          
+          <Link to="/myorders">
+            <button>My Orders</button>
+          </Link>
+          
           <Link to="/cart">
             <img src={carticon} alt="Cart" />
           </Link>
+          
           <div className="nav-cart-count">
-            {getTotalCartItems()}
+            orders
           </div>
         </div>
       </div>

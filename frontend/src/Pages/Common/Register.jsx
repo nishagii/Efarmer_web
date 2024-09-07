@@ -3,6 +3,7 @@ import './Register.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const LoginSignup = () => {
   const [currentState, setCurrentState] = useState('Sign Up');
@@ -31,11 +32,13 @@ const LoginSignup = () => {
     if (response.data.success) {
       setToken(response.data.token);
       localStorage.setItem('token', response.data.token);
+      toast.success(response.data.message);
 
       // Redirect to login page after successful signup
-      navigate('/home');
+      navigate('/login');
+      
     } else {
-      alert(response.data.message);
+      toast.error(response.data.message);
     }
   }
 
@@ -47,9 +50,9 @@ const LoginSignup = () => {
           <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='User Name' />
           <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Email' />
           <select onChange={onChangeHandler} name="type" id="user-type">
-            <option value="customer">Customer</option>
-            <option value="ShopOwner">Shop Owner</option>
-            <option value="AnimalOwner">Animal Farm Owner</option>
+            <option value="Customer">Customer</option>
+            <option value="Shop Owner">Shop Owner</option>
+            <option value="Animal Farm Owner">Animal Farm Owner</option>
           </select>
           <input name='password' onChange={onChangeHandler} value={data.password} type="password" placeholder='Password' />
         </div>

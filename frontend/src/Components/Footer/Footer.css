@@ -1,6 +1,6 @@
 /* Footer */
 .contact-footer {
-    background-color: #333;
+    background-color: #555555;
     color: white;
     padding: 50px 100px;
     display: flex;
@@ -66,4 +66,8 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
+}
+
+.button{
+    margin-top: 5px;
 }

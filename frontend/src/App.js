@@ -27,6 +27,11 @@ import fruit_image from "./Components/Assets/freshfut.jpeg";
 import vegetable_image from "./Components/Assets/fvegetables.jpeg";
 import AppDownload from "./Components/AppDownload/AppDownload";
 import Login from "./Pages/Common/Login";
+import PlaceOrder from "./Pages/Placeorder/PlaceOrder";
+import Myorders from "./Pages/Myorders/Myorders";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 function App() {
   // Define the initial list of fruits
@@ -87,6 +92,7 @@ function App() {
 
   return (
     <div>
+      <ToastContainer />
       <BrowserRouter>
         <ScrollToTop />
 
@@ -138,7 +144,8 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/register" element={<LoginSignup />} />
           <Route path="/login" element={<Login />} />
-          
+          <Route path="/placeorder" element={<PlaceOrder />} />
+          <Route path="/myorders" element={<Myorders />} />
 
           <Route
             path="/ffruits"
@@ -150,7 +157,7 @@ function App() {
           />
           <Route
             path="/oldfruits"
-            element={<ShopCategory  category="ofruits" />}
+            element={<ShopCategory category="ofruits" />}
           />
           <Route
             path="/oldvegetables"

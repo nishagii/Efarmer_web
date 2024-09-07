@@ -1,9 +1,23 @@
 import React from 'react';
-import './About.css'; // Make sure to include your CSS file
-
+import './About.css'; // Make sure to include your updated CSS file
+import tractor from '../../Components/Assets/tractor.png';
+import farmer from '../../Components/Assets/farmer.png';
+import AgricultureP from '../../Components/Assets/AgricultureP.png';
+import OrganicP from '../../Components/Assets/OrganicP.jpg';
+import fveg from '../../Components/Assets/fveg.png';
+import DailyP from '../../Components/Assets/DailyP.jpg';
+import bonnie from '../../Components/Assets/bonnie.jpg';
+import sarahh from '../../Components/Assets/sarahh.png';
+import aboutpic from '../../Components/Assets/aboutpic.png';
 const AboutPage = () => {
     return (
         <div>
+            {/* Background Image Section */}
+            <section className="background-image-section">
+                <h1>Welcome to Our Agriculture Market</h1>
+                <img src={aboutpic} alt="backgroung-about" className="backg" />
+            </section>
+
             {/* Hero Section */}
             <section className="hero-about">
                 <div className="hero-about-content">
@@ -15,7 +29,8 @@ const AboutPage = () => {
             <section className="main-content">
                 <div className="content-left">
                     <h2>The Best Agriculture Market</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                    <p className="highlight-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                    <p>There are many variations of passages of lorem ipsum available but the majority have suffered alteration in some form by injected humor or random word which don’t look even.</p>
                     <ul>
                         <li>Supeo ednise suscipit sagittis leo</li>
                         <li>Entum estibulum dignissim posuere</li>
@@ -24,15 +39,16 @@ const AboutPage = () => {
                     <button className="discover-more-button">Discover More</button>
                 </div>
                 <div className="content-right">
-                    <img src="tractor-farm.jpg" alt="Tractor on a farm" />
-                    <img src="farmer.jpg" alt="Farmer with crops" />
+                    <div className="image-container">
+                        <img src={tractor} alt="Tractor on a farm" className="main-image" />
+                        <img src={farmer} alt="Farmer with crops" className="overlay-image" />
+                    </div>
                 </div>
             </section>
 
             {/* ECO-Friendly Section */}
             <section className="eco-friendly">
                 <h2>ECO-Friendly Products can be Made from Scratch</h2>
-                <button className="play-video-button">Play Video</button>
             </section>
 
             {/* What We Offer Section */}
@@ -40,19 +56,19 @@ const AboutPage = () => {
                 <h2>What We Offer</h2>
                 <div className="offer-cards">
                     <div className="offer-card">
-                        <img src="agriculture-products.jpg" alt="Agriculture Products" />
+                        <img src={AgricultureP} alt="Agriculture Products" />
                         <button className="offer-button">Read More</button>
                     </div>
                     <div className="offer-card">
-                        <img src="organic-products.jpg" alt="Organic Products" />
+                        <img src={OrganicP} alt="Organic Products" />
                         <button className="offer-button">Read More</button>
                     </div>
                     <div className="offer-card">
-                        <img src="fresh-vegetables.jpg" alt="Fresh Vegetables" />
+                        <img src={fveg} alt="Fresh Vegetables" />
                         <button className="offer-button">Read More</button>
                     </div>
                     <div className="offer-card">
-                        <img src="daily-products.jpg" alt="Daily Products" />
+                        <img src={DailyP} alt="Daily Products" />
                         <button className="offer-button">Read More</button>
                     </div>
                 </div>
@@ -65,7 +81,7 @@ const AboutPage = () => {
                     <div className="testimonial-card">
                         <p>There are many variations of passages of lorem ipsum, but the majority have suffered alteration.</p>
                         <div className="testimonial-author">
-                            <img src="customer1.jpg" alt="Bonnie Tolbet" />
+                            <img src={bonnie} alt="Bonnie Tolbet" />
                             <h3>Bonnie Tolbet</h3>
                             <span>Customer</span>
                         </div>
@@ -73,7 +89,7 @@ const AboutPage = () => {
                     <div className="testimonial-card">
                         <p>There are many variations of passages of lorem ipsum, but the majority have suffered alteration.</p>
                         <div className="testimonial-author">
-                            <img src="customer2.jpg" alt="Sarah Albert" />
+                            <img src={sarahh} alt="Sarah Albert" />
                             <h3>Sarah Albert</h3>
                             <span>Customer</span>
                         </div>

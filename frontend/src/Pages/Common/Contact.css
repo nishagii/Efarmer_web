@@ -1,11 +1,11 @@
 /* Hero Section */
 .contact-hero {
-    background-image: url('');
+    background-image: url('../../Components/Assets/title.jpg');
     background-size: cover;
     background-position: center;
     padding: 100px 0;
     text-align: center;
-    color: #fff;
+    color: #ffffff;
     font-size: 36px;
     font-weight: bold;
 }
@@ -19,16 +19,27 @@
 }
 
 .info-box {
-    width: 30%;
+    width: 25%;
     padding: 20px;
+    
     text-align: center;
     border-radius: 10px;
-    background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.contact{
+    background-color: #b0d331;
+
+}
+.about{
+    background-color:rgba(75, 175, 71, 1);
+
+}
+.address{
+    background-color: rgba(238, 192, 68, 1);
 }
 
 .info-box h3 {
-    color: #4BAF47;
+    color: #e7efe7;
     margin-bottom: 15px;
 }
 

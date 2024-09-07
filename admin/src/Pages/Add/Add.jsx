@@ -39,7 +39,7 @@ const Add = ({url}) => {
       setData({
         name: '',
         id: '',
-        category: 'Fresh Fruits',
+        category: 'ffruits',
         price: ''
       })
       setImage(false)
@@ -71,10 +71,10 @@ const Add = ({url}) => {
           <div className='add-category flex-col'>
             <p>Product Category</p>
             <select onChange={onChangeHandler} name="category" id="">
-              <option value="fFruits">Fresh Fruit</option>
-              <option value="fVegetables">Fresh Vegetable</option>
-              <option value="oFruits">Old Fruits</option>
-              <option value="oVegetables">Old Vegetable</option>
+              <option value="ffruits">ffruits</option>
+              <option value="fveg">fveg</option>
+              <option value="ofruits">ofruits</option>
+              <option value="oveg">oveg</option>
             </select>
           </div>
           <div className="add-price flex-col">
