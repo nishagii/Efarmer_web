@@ -1,10 +1,11 @@
 /* Footer */
 .contact-footer {
-    background-color: #555555;
-    color: white;
-    padding: 50px 100px;
+    background-color: #64ef6921;
+    color: rgb(0, 0, 0);
+    padding: 30px 30px;
     display: flex;
     justify-content: space-between;
+    margin-top: 30px;
 }
 
 .footer-section {
@@ -25,7 +26,10 @@
     margin-bottom: 10px;
     cursor: pointer;
 }
-
+.footer-section ul a {
+    text-decoration: none;
+    color:#000000;
+}
 .footer-section ul li:hover {
     text-decoration: underline;
 }
@@ -34,6 +38,9 @@
     margin-bottom: 10px;
 }
 
+.agrios{
+    font-weight: bold;
+}
 .footer-section input[type="email"] {
     padding: 10px;
     border-radius: 5px;
@@ -69,5 +76,5 @@
 }
 
 .button{
-    margin-top: 5px;
+    margin-top: px;
 }

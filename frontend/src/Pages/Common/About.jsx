@@ -8,21 +8,12 @@ import fveg from '../../Components/Assets/fveg.png';
 import DailyP from '../../Components/Assets/DailyP.jpg';
 import bonnie from '../../Components/Assets/bonnie.jpg';
 import sarahh from '../../Components/Assets/sarahh.png';
-import aboutpic from '../../Components/Assets/aboutpic.png';
 const AboutPage = () => {
     return (
         <div>
             {/* Background Image Section */}
-            <section className="background-image-section">
-                <h1>Welcome to Our Agriculture Market</h1>
-                <img src={aboutpic} alt="backgroung-about" className="backg" />
-            </section>
-
-            {/* Hero Section */}
-            <section className="hero-about">
-                <div className="hero-about-content">
-                    <h1>About</h1>
-                </div>
+            <section className="hero">
+                <h1>Wanna know something more ?</h1>
             </section>
 
             {/* Main Content Section */}
@@ -67,7 +58,7 @@ const AboutPage = () => {
                         <img src={fveg} alt="Fresh Vegetables" />
                         <button className="offer-button">Read More</button>
                     </div>
-                    <div className="offer-card">
+                    <div className="offer-card"> 
                         <img src={DailyP} alt="Daily Products" />
                         <button className="offer-button">Read More</button>
                     </div>

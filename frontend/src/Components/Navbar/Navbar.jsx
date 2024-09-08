@@ -88,7 +88,7 @@ const Navbar = () => {
           </Link>
           
           <div className="nav-cart-count">
-            orders
+            My cart
           </div>
         </div>
       </div>

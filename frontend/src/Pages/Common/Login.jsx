@@ -56,7 +56,7 @@ const Login = () => {
         <div className="loginsignup">
             <form onSubmit={onLogin} className="loginsignup-container">
                 <h1>Login</h1>
-                <div className="loginsignup-fields">
+                <div className="loginsignup-fields login">
                     <input
                         name="email"
                         onChange={onChangeHandler}
@@ -71,6 +71,9 @@ const Login = () => {
                         type="password"
                         placeholder="Password"
                     />
+                </div>
+                <div>
+                    
                 </div>
                 <button type="submit">Login</button>
                 <p className="loginsignup-login">
