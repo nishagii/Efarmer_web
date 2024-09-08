@@ -3,10 +3,10 @@ import {removeUser, listUsers, loginUser, registerUser, updateUser } from '../co
 
 const userRouter = express.Router();
 
-userRouter.post('/register', registerUser);
-userRouter.post('/login', loginUser);
-userRouter.get('/list', listUsers);
-userRouter.post('/update', updateUser);
-userRouter.post('/delete', removeUser);
+userRouter.post('/register', registerUser); //ishan
+userRouter.post('/login', loginUser); // ishan
+userRouter.get('/list', listUsers); // ishan
+userRouter.post('/update', updateUser); //sawani
+userRouter.post('/delete', removeUser); //sujan
 
 export default userRouter;

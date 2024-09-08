@@ -25,6 +25,10 @@ const Contact = () => {
           <p>United States of America</p>
         </div>
       </section>
+      
+      <div className='feedback'>
+        Send us your valuable feedbacks
+      </div>
 
       <section className="contact-form-section">
         <div className="map-container">

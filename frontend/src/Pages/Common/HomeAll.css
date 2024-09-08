@@ -75,7 +75,7 @@
   flex: 2;
   background-color: #f0ff6530;
   box-shadow: 0 4px 8px 0 rgba(112, 112, 112, 0.328), 0 0 rgba(255, 255, 86, 0.713);
-  transition: all 0.35s ease; ;
+  transition: all 0.35s ease; 
   padding: 10px 50px;
   text-align: justify;
   line-height: 1.8;
@@ -136,9 +136,14 @@
   background-color: rgba(255, 254, 254, 0.332);
 }
 
+h2{
+  margin-top: 20px;
+}
+
 /* Products Section Styling */
 .products {
   padding: 40px;
+  padding-top: 0px;
   text-align: center;
   background-color: #ffffff;
 
@@ -149,6 +154,7 @@
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
+
 }
 
 .card {
@@ -158,10 +164,11 @@
   margin: 10px;
   background-color: #f8f8f8;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease;
+    background-color: #f0ff6530;
 }
 
 .card:hover {
@@ -170,8 +177,8 @@
 
 .card img {
   max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 200px;
+  border-radius: 10px;
 }
 
 .card h4 {
@@ -190,12 +197,6 @@ footer {
 .card a {
     text-decoration: none;
     color: inherit;
-}
-
-.card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
 }
 
 .card h4 {

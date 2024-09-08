@@ -144,14 +144,21 @@ const PlaceOrder = () =>{
           </div>
           <hr />
           <div className="cart-total-details">
-            <p>Delivery Fee</p>
-            <p>Rs.{getTotalCartAmount() === 0 ? 0 : 2}</p>
+            <p>Discounts today</p>
+            <p>{getTotalCartAmount() === 0 ? 0 : 10}%</p>
+          </div>
+          <hr />
+          <div className="cart-total-details">
+            <p>Money Saved</p>
+            <p>
+              {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() * 0.1}%
+            </p>
           </div>
           <hr />
           <div className="cart-total-details">
             <b>Total</b>
             <b>
-              Rs.{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}
+              Rs.{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() * 0.9}
             </b>
           </div>
           <button type="submit">Place Order</button>

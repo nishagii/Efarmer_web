@@ -63,8 +63,10 @@
 }
 .cart-total button{
   border: none;
+  border-radius: 6px;
   color: white;
-  background-color:green;
-  width: max(15vw, 200px);
-  padding: 12px 0px;
+  background-color: #4CAF50;
+  width:fit-content;
+  padding: 14px 20px;
+  font-size: 14px;
 }

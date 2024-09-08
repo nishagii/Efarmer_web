@@ -2,10 +2,10 @@ import React from 'react';
 import './About.css'; // Make sure to include your updated CSS file
 import tractor from '../../Components/Assets/tractor.png';
 import farmer from '../../Components/Assets/farmer.png';
-import AgricultureP from '../../Components/Assets/AgricultureP.png';
-import OrganicP from '../../Components/Assets/OrganicP.jpg';
-import fveg from '../../Components/Assets/fveg.png';
-import DailyP from '../../Components/Assets/DailyP.jpg';
+import AgricultureP from '../../Components/Assets/1.jpg';
+import OrganicP from '../../Components/Assets/2.jpg';
+import fveg from '../../Components/Assets/3.jpg';
+import DailyP from '../../Components/Assets/4.jpg';
 import bonnie from '../../Components/Assets/bonnie.jpg';
 import sarahh from '../../Components/Assets/sarahh.png';
 const AboutPage = () => {
@@ -35,11 +35,6 @@ const AboutPage = () => {
                         <img src={farmer} alt="Farmer with crops" className="overlay-image" />
                     </div>
                 </div>
-            </section>
-
-            {/* ECO-Friendly Section */}
-            <section className="eco-friendly">
-                <h2>ECO-Friendly Products can be Made from Scratch</h2>
             </section>
 
             {/* What We Offer Section */}
@@ -73,8 +68,8 @@ const AboutPage = () => {
                         <p>There are many variations of passages of lorem ipsum, but the majority have suffered alteration.</p>
                         <div className="testimonial-author">
                             <img src={bonnie} alt="Bonnie Tolbet" />
-                            <h3>Bonnie Tolbet</h3>
-                            <span>Customer</span>
+                            <h3>Bonnie Tolbet </h3>
+                            <span> - Customer</span>
                         </div>
                     </div>
                     <div className="testimonial-card">
@@ -82,7 +77,7 @@ const AboutPage = () => {
                         <div className="testimonial-author">
                             <img src={sarahh} alt="Sarah Albert" />
                             <h3>Sarah Albert</h3>
-                            <span>Customer</span>
+                            <span> - Customer</span>
                         </div>
                     </div>
                 </div>

@@ -28,7 +28,6 @@ const Item = (props) => {
         
       </div>
       <p>{`Total = Rs ${itemQuantity* props.price}`}</p>
-      <button >Add to cart</button>
     </div>
   )
 }
