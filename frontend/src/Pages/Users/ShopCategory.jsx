@@ -4,6 +4,7 @@ import './CSS/ShopCategory.css'
 import { ShopContext } from '../../Context/ShopContext'
 import dropdown_icon from '../../Components/Assets/dropdown_icon.png'
 import Item from '../../Components/Item/Item'
+import { Link } from 'react-router-dom'
 
 const ShopCategory = (props) => {
 
@@ -12,8 +13,7 @@ const ShopCategory = (props) => {
   return (
     <div className='shop-category'>
       <header>
-        <h1>Agrios</h1>
-        <p className='contact'>Contact: support@agrios.com</p>
+        <h1>You Got {props.category } !</h1>
       </header>
       <img className='banner' src={props.banner} alt="" />
 
@@ -36,6 +36,13 @@ const ShopCategory = (props) => {
           }
         })}
       </div>
+      <div className='view-cart-btn'>
+        <Link to="http://localhost:3000/cart">
+          <button >View Cart</button>
+        </Link>
+        
+      </div>
+
     </div>
     
   )

@@ -10,20 +10,16 @@ const Add = ({url}) => {
   const [data, setData] = useState({
     name: '',
     id: '',
-    category: 'Fresh Fruits',
+    category: 'ffruits',
     price: ''
   })
 
   const onChangeHandler = (event) => { 
     const name = event.target.name;
     const value = event.target.value;
-    setData(data=>({...data, [name]: value}))
+    console.log("nadun",name,value)
+    setData(data => ({ ...data, [name]: value }))
   }
-
-  // useEffect(() => {
-  //   console.log(data)
-  // },[data])
-
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
@@ -31,6 +27,7 @@ const Add = ({url}) => {
     formData.append('name', data.name);
     formData.append('id', data.id);
     formData.append('category', data.category);
+    console.log("nadun",data.category)
     formData.append('price', data.price);
     formData.append('image', image);
     const response = await axios.post(`${url}/api/fvege/upload`, formData);
@@ -70,7 +67,8 @@ const Add = ({url}) => {
         <div className="add-category-price">
           <div className='add-category flex-col'>
             <p>Product Category</p>
-            <select onChange={onChangeHandler} name="category" id="">
+            <select onChange={onChangeHandler} name="category" id="" required>
+              <option >Select Type</option>
               <option value="ffruits">ffruits</option>
               <option value="fveg">fveg</option>
               <option value="ofruits">ofruits</option>

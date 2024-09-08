@@ -71,11 +71,6 @@ const Cart = () => {
           <Link to="/placeorder">  <button >Save the order</button></Link>
          
         </div>
-        <div>
-          <p>mokak hari magulak danna methnt</p>
-          <input type="text" placeholder="redda"/>
-          <button>button ekkuth dapan</button>
-        </div>
       </div>
     </div>
   )

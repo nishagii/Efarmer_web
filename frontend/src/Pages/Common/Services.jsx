@@ -1,5 +1,12 @@
 import React from 'react';
 import './Services.css'; // Make sure to import your CSS file
+import vegImage from '../../Components/Assets/bg8.jpeg';
+import futImage from '../../Components/Assets/bg16.avif';
+import ovegImage from '../../Components/Assets/bg15.jpeg';
+import ofutImage from '../../Components/Assets/bg13.jpeg';
+// import banner from '../../Components/Assets/bg17.jpg';
+
+
 
 const Services = () => {
     return (
@@ -15,51 +22,47 @@ const Services = () => {
             {/* Description Section */}
             <section className="description">
                 <p>
-                    cisdhoicshdcsv c fof ciods fdhoi hifoi fishpf shf cfhpstsc fs pdfsd hdu cds
-                    cdifod fist hsdoifh ds
-                    ds
-                    fdsf d
-                    dfdfsiofhsdiufhdsiufgdsif df d fdsdo . dsodsf9s 0sfddshfi sdfipds fiusd ihsduigsi gf ui efdhn fhiafdos
-                    methana description ekak ape website eka gana
+
+Welcome to our online e-farming services! We offer a seamless platform for farmers and consumers to connect,ensuring fresh produce is just a click away. Whether you're looking to purchase farm-fresh fruits and vegetables or sell your crops directly to customers, our platform simplifies the process. From organic farming solutions to customized delivery options, we empower farmers to grow their businesses and provide customers with the highest quality produce straight from the source. Join us in building a sustainable, farm-to-table community!
                 </p>
             </section>
 
             {/* Products Section */}
             <section className="products">
                 <div className="product">
-                    <img src="vegetables.jpg" alt="Vegetables" />
+                    <img src={ vegImage} alt="Vegetables" />
                     <div className="product-content">
-                        <h2>Vegetables</h2>
+                        <h2>Fresh Vegetables</h2>
                         <button className="product-button">Order Now</button>
                     </div>
                 </div>
                 <div className="product">
-                    <img src="fruits.jpg" alt="Fruits" />
+                    <img src={futImage} alt="Fruits" />
                     <div className="product-content">
-                        <h2>Fruits</h2>
+                        <h2>Fresh Fruits</h2>
                         <button className="product-button">Order Now</button>
                     </div>
                 </div>
                 <div className="product">
-                    <img src="vegetables.jpg" alt="Vegetables" />
+                    <img src={ovegImage} alt="Vegetables" />
                     <div className="product-content">
-                        <h2>Vegetables</h2>
+                        <h2>Rotten Vegetables</h2>
                         <button className="product-button">Order Now</button>
                     </div>
                 </div>
                 <div className="product">
-                    <img src="vegetables.jpg" alt="Vegetables" />
+                    <img src={ofutImage} alt="Vegetables" />
                     <div className="product-content">
-                        <h2>Vegetables</h2>
+                        <h2>Overriped Fruits</h2>
                         <button className="product-button">Order Now</button>
                     </div>
                 </div>
+                
             </section>
 
             {/* Food Section */}
             <section className="food">
-                <h2>Get the MAXimum use of Food...</h2>
-                <img src="food.jpg" alt="Food" />
+                <h2>Get together with us today! Get the MAXimum use of Food...</h2>
             </section>
         </div>
     );

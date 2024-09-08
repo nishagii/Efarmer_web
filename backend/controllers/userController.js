@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import validator from "validator";
 
-//login user
+//login user (ishan)
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
@@ -48,7 +48,7 @@ const createToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET);
 };
 
-//register user
+//register user (ishan)
 
 const registerUser = async (req, res) => {
   const { name, email, type, password } = req.body;
@@ -77,7 +77,7 @@ const registerUser = async (req, res) => {
       });
     }
 
-    //hashing password
+    //hashing password (ishan)
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
@@ -101,7 +101,7 @@ const registerUser = async (req, res) => {
   }
 };
 
-//list all users
+//list all users (ishan)
 
 
 // List all users
@@ -125,7 +125,7 @@ const listUsers = async (req, res) => {
   }
 };
 
-//update user details
+//update user details (sawani)
 
 const updateUser = async (req, res) => {
   try {
@@ -175,7 +175,9 @@ const updateUser = async (req, res) => {
     });
   }
 };
-//remove users from the database
+
+
+//remove users from the database (sujan)
 
 const removeUser = async (req, res) => {
   try {
