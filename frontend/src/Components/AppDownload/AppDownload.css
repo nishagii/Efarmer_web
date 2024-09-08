@@ -1,14 +1,14 @@
 .app-download{
-    margin-top: 100px;
-    font-size: max(3vw, 20px);
+    margin-top: 50px;
+    font-size: max(2.5vw, 10px);
     text-align: center;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .app-download-platforms{
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 30px;
     gap: max(2vw, 10px);    
 }
 

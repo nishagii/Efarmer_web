@@ -36,32 +36,28 @@ const LoginSignup = () => {
 
       // Redirect to login page after successful signup
       navigate('/login');
-      
+
     } else {
       toast.error(response.data.message);
     }
   }
 
   return (
-    <div className="loginsignup">
-      <form onSubmit={onLogin} className="loginsignup-container">
+    <div className="loginsignup ">
+      <form onSubmit={onLogin} className="loginsignup-container up">
         <h1>{currentState}</h1>
-        <div className="loginsignup-fields">
+        <div className="loginsignup-fields register">
           <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='User Name' />
           <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Email' />
-          <select onChange={onChangeHandler} name="type" id="user-type">
+          <select onChange={onChangeHandler} name="type" id="user-type" >
             <option value="Customer">Customer</option>
             <option value="Shop Owner">Shop Owner</option>
             <option value="Animal Farm Owner">Animal Farm Owner</option>
           </select>
           <input name='password' onChange={onChangeHandler} value={data.password} type="password" placeholder='Password' />
         </div>
-        <button type='submit'>{currentState === "Sign Up" ? "Create account" : "Login"}</button>
+        <button className='regbtn' type='submit'>{currentState === "Sign Up" ? "Create account" : "Login"}</button>
         <p className='loginsignup-login'>Already have an account? <Link to="/login"><span>Login here</span></Link></p>
-        <div className="loginsignup-agree">
-          <input type="checkbox" name='' id='' />
-          <p>By continuing, I agree to the terms of uses & privacy policies</p>
-        </div>
       </form>
     </div>
   );

@@ -9,7 +9,7 @@ const Footer = () => {
             <footer className="contact-footer">
                 <div className="footer-section">
                     <img src={logo} alt="logo" />
-                    <p>
+                    <p className='agrios'>
                         "Agrios: Where Nature's Bounty Meets Sustainable Cultivation."
                     </p>
                     <div className="social-icons">
@@ -36,6 +36,9 @@ const Footer = () => {
                     <p>+94 713 127 870</p>
                     <p>reach@AGRIOS.com</p>
                     <p>No 45, Hospital road, Kahathuduwa, Piliyandala</p>
+                   
+                </div>
+                <div className="footer-section">
                     <input type="email" placeholder="Your Email Address" />
                     <button className='button'>Subscribe</button>
                 </div>

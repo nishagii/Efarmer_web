@@ -7,7 +7,7 @@ const Services = () => {
             {/* Hero Section */}
             <section className="hero">
                 <div className="hero-content">
-                    <h1>Agriculture & Organic Market</h1>
+                    <h1>Agrios brings Everything for you</h1>
                     <button className="hero-button">Show Now</button>
                 </div>
             </section>
