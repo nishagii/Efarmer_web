@@ -31,6 +31,8 @@ import PlaceOrder from "./Pages/Placeorder/PlaceOrder";
 import Myorders from "./Pages/Myorders/Myorders";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import farm_image from "./Components/Assets/farm.jpeg";
+import farm_veg from "./Components/Assets/farmveg.jpeg";
 
 
 function App() {
@@ -149,19 +151,21 @@ function App() {
 
           <Route
             path="/ffruits"
-            element={<ShopCategory banner={fruit_image} category="ffruits" />}
+            element={
+              <ShopCategory banner={vegetable_image} category="ffruits" />
+            }
           />
           <Route
             path="/fvegetables"
-            element={<ShopCategory banner={vegetable_image} category="fveg" />}
+            element={<ShopCategory banner={fruit_image} category="fveg" />}
           />
           <Route
             path="/oldfruits"
-            element={<ShopCategory category="ofruits" />}
+            element={<ShopCategory banner={farm_image} category="ofruits" />}
           />
           <Route
             path="/oldvegetables"
-            element={<ShopCategory category="oveg" />}
+            element={<ShopCategory banner={farm_veg} category="oveg" />}
           />
         </Routes>
         <AppDownload />

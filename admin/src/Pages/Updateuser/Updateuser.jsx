@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import './Updateuser.css'; // Make sure to add your styles
+import './Updateuser.css'; 
 
 const UpdateUser = ({ url }) => {
   const [data, setData] = useState({

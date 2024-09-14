@@ -20,6 +20,7 @@ const LoginSignup = () => {
   const onChangeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
+    console.log("name",name,value)
     setData(data => ({ ...data, [name]: value }));
   }
 

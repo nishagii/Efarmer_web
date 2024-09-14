@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { assets } from '../../assets/assets';
-import './Update.css'; // Make sure to add your styles
+import './Update.css'; 
 
 const UpdateVeg = ({ url }) => {
     const [data, setData] = useState({
